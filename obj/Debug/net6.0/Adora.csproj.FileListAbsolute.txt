@@ -1,0 +1,15 @@
+C:\Users\Brand\Projects2023\Adora\bin\Debug\net6.0\Adora.exe
+C:\Users\Brand\Projects2023\Adora\bin\Debug\net6.0\Adora.deps.json
+C:\Users\Brand\Projects2023\Adora\bin\Debug\net6.0\Adora.runtimeconfig.json
+C:\Users\Brand\Projects2023\Adora\bin\Debug\net6.0\Adora.dll
+C:\Users\Brand\Projects2023\Adora\bin\Debug\net6.0\Adora.pdb
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\Adora.csproj.AssemblyReference.cache
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\Adora.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\Adora.AssemblyInfoInputs.cache
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\Adora.AssemblyInfo.cs
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\Adora.csproj.CoreCompileInputs.cache
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\Adora.dll
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\refint\Adora.dll
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\Adora.pdb
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\Adora.genruntimeconfig.cache
+C:\Users\Brand\Projects2023\Adora\obj\Debug\net6.0\ref\Adora.dll
