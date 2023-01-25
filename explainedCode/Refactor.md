@@ -42,7 +42,7 @@ public bool Send(Email email)
     - All fields except for ``AcademicYear`` we're moved to the parent class since the FirstYearStudent and LastYearStudent classes shared those fields. 
         - ``AcademicYear`` was defined in the child class in order to have a unique setter method that validated whether the Academic Year fit the qualifications for a first year or last year student. 
 - The ``Student`` class has the constructor injection, ``Emailer``. This was used so we did not have to create an instance of ``Emailer`` if we were to add other methods within the student classes that needed ``Emailer``.
-- Created a field ``List<string> Disciplines`` in the ``Student`` class. This is used in children classes to validate inputs given in case that a discipline is input that is were not valid due to  aspelling error, not a course given by the institution, and to limit what can be input to the method. Shown below:
+- Created a field ``List<string> Disciplines`` in the ``Student`` class. This is used in children classes to validate inputs given in case that a discipline is input that is were not valid due to a spelling error, a course that was not given a the institution, and to limit what can be input to the method. Shown below:
 ```csharp
 // field in parent class Student
 protected List<string> Disciplines = new List<string>() {"computer science", "math", "biology", "chemistry", "history", "physics", "english"};
