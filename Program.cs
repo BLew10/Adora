@@ -1,66 +1,16 @@
 ﻿namespace Adora;
 class Program
 {
-           public enum Hobby { 
-
-            Music,
-
-            Football,
-
-            Cars,
-
-            Movies
-
-        }
-
-
-
-
-    public class Email
+    public enum Hobby
     {
 
-        public string From { get; set; }
+        Music,
 
-        public string To { get; set; }
+        Football,
 
-        public string Subject { get; set; }
+        Cars,
 
-        public string Body { get; set; }
-    }
-     public class Emailer
-
-    {
-        public bool CreateAndSendExamResultEmail(string from, string to, string firstName, string lastName, int academicYear, string discipline, int mark)
-        {
-            //String interpolation used  
-            Email email = new Email();
-            email.From = from;
-            email.To = to;
-            email.Subject = $"{firstName} {lastName} exam result for discipline {discipline}";
-            email.Body = $"Hi there! Here is the exam result for student {firstName} {lastName}: Discipline: {discipline}, Academic year: {academicYear},  Mark: {mark}";
-
-            return Send(email);
-        }
-
-        public bool Send(Email email)
-        {
-            Random rand = new Random();
-            int rInt = rand.Next(1, 3);
-            if (1 / rInt == 1)
-            {
-                Console.WriteLine("Email sent successfully.");
-                Console.WriteLine(email.Body);
-                return true;
-
-            }
-            else
-            {
-                Console.WriteLine("Email failed to send.");
-                return false;
-            }
-
-
-        }
+        Movies
 
     }
 
@@ -87,7 +37,7 @@ class Program
 
         public string State { get; set; }
 
-        protected List<string> Disciplines = new List<string>() {"computer science", "math", "biology", "chemistry", "history", "physics", "english"};
+        protected List<string> Disciplines = new List<string>() { "computer science", "math", "biology", "chemistry", "history", "physics", "english" };
 
         // Given the access modifier "protected" so that the methods of _emailer and  are only accessible within the child classes
         protected Emailer _emailer;
@@ -243,60 +193,111 @@ class Program
 
     }
 
+
+
+    public class Email
+    {
+
+        public string From { get; set; }
+
+        public string To { get; set; }
+
+        public string Subject { get; set; }
+
+        public string Body { get; set; }
+    }
+    public class Emailer
+
+    {
+        public bool CreateAndSendExamResultEmail(string from, string to, string firstName, string lastName, int academicYear, string discipline, int mark)
+        {
+            //String interpolation used  
+            Email email = new Email();
+            email.From = from;
+            email.To = to;
+            email.Subject = $"{firstName} {lastName} exam result for discipline {discipline}";
+            email.Body = $"Hi there! Here is the exam result for student {firstName} {lastName}: Discipline: {discipline}, Academic year: {academicYear},  Mark: {mark}";
+
+            return Send(email);
+        }
+
+        public bool Send(Email email)
+        {
+            Random rand = new Random();
+            int rInt = rand.Next(1, 3);
+            if (1 / rInt == 1)
+            {
+                Console.WriteLine("Email sent successfully.");
+                Console.WriteLine(email.Body);
+                return true;
+
+            }
+            else
+            {
+                Console.WriteLine("Email failed to send.");
+                return false;
+            }
+
+
+        }
+
+    }
+
+
     static void Main(string[] args)
     {
         int[] myArray = { 3, 4, 6, 10, 11, 15 };
 
-int[] toddsArray = { 1, 5, 8, 12, 14, 19 };
+        int[] toddsArray = { 1, 5, 8, 12, 14, 19 };
 
-int[] MergeArrays(int[] arrOne, int[] arrTwo)
-{
-    int pointerOne = 0;
-    int pointerTwo = 0;
-    int[] result = new int[arrOne.Length + arrTwo.Length];
-    for (int i = 0; i < result.Length; i++)
-    {
-        if (pointerOne >= arrOne.Length)
+        int[] MergeArrays(int[] arrOne, int[] arrTwo)
         {
-            result[i] = arrTwo[pointerTwo++];
+            int pointerOne = 0;
+            int pointerTwo = 0;
+            int[] result = new int[arrOne.Length + arrTwo.Length];
+            for (int i = 0; i < result.Length; i++)
+            {
+                if (pointerOne >= arrOne.Length)
+                {
+                    result[i] = arrTwo[pointerTwo++];
+                }
+                else if (pointerTwo >= arrTwo.Length)
+                {
+                    result[i] = arrOne[pointerOne++];
+                }
+                else
+                {
+                    result[i] = arrOne[pointerOne] < arrTwo[pointerTwo] ? arrOne[pointerOne++] : arrTwo[pointerTwo++];
+                }
+            }
+            return result;
         }
-        else if (pointerTwo >= arrTwo.Length)
-        {
-            result[i] = arrOne[pointerOne++];
-        }
-        else
-        {
-            result[i] = arrOne[pointerOne] < arrTwo[pointerTwo] ? arrOne[pointerOne++] : arrTwo[pointerTwo++];
-        }
-    }
-    return result;
-}
 
 
 
-// Prints [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
+        // Prints [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
 
-Console.WriteLine($"[{string.Join(", ", MergeArrays(toddsArray, myArray))}]");
-
-
-
-// Problem #2
-
-FirstYearStudent eric = new FirstYearStudent("Eric","Bush","ebush@mail.com", new DateTime(2003, 04, 30), new List<Hobby>() { Hobby.Football, Hobby.Music }, 10,"Rosemary Ct.", "Sacramento", 95678, "CA", 1);
-
-eric.GoToParty("Chris's wedding");
-
-eric.EmailExamResult("Math", 4);
+        Console.WriteLine($"[{string.Join(", ", MergeArrays(toddsArray, myArray))}]");
 
 
 
-LastYearStudent andrew = new LastYearStudent("Andrew", "Hanna", "ahanna@test.com",new DateTime(2000, 11, 15), new List<Hobby>() { Hobby.Movies, Hobby.Music, Hobby.Cars },14, "Helen St.", "Rocklin", 95985, "CA", 5);
-andrew.GoToParty("Chris's wedding");
+        // Problem #2
 
-andrew.GoToOpera("Othello");
+        FirstYearStudent eric = new FirstYearStudent("Eric", "Bush", "ebush@mail.com", new DateTime(2003, 04, 30), new List<Hobby>() { Hobby.Football, Hobby.Music }, 10, "Rosemary Ct.", "Sacramento", 95678, "CA", 1);
 
-andrew.EmailExamResult("Biologgy", 4);
+        eric.GoToParty("Chris's wedding");
 
-Console.ReadKey();
+        eric.EmailExamResult("Math", 4);
+
+
+
+        LastYearStudent andrew = new LastYearStudent("Andrew", "Hanna", "ahanna@test.com", new DateTime(2000, 11, 15), new List<Hobby>() { Hobby.Movies, Hobby.Music, Hobby.Cars }, 14, "Helen St.", "Rocklin", 95985, "CA", 5);
+        andrew.GoToParty("Chris's wedding");
+
+        andrew.GoToOpera("Othello");
+
+        andrew.EmailExamResult("Biologgy", 4);
+
+        Console.ReadKey();
     }
 }
