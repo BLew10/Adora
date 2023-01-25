@@ -23,5 +23,5 @@ else
     result[i] = arrOne[pointerOne] < arrTwo[pointerTwo] ? arrOne[pointerOne++] : arrTwo[pointerTwo++];
 }
 ```
-- This condition is hit when neither ``pointerOne`` or ``pointerTwo`` is greater than their associated array's length. We then can compare the values at each array, starting at index 0. I used a ternary operator to determine what result[i] would be in order to limit the code used. Once compared, the lesser value will be set to result[i] and then that pointer incremented. 
+- This condition is hit when neither ``pointerOne`` or ``pointerTwo`` is greater than their associated array's length. We then can compare the values at each array. I used a ternary operator to determine what result[i] would be in order to limit the code used. Once compared, the lesser value will be set to result[i] and then that pointer incremented. 
 - Once the for loop is complete, the result array is then returned. 
