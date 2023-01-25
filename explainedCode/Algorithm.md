@@ -2,7 +2,7 @@
 
 - The first thing I did was intitialize two pointers, ``pointerOne`` and ``pointerTwo`` that will be used to access the values of ``arrOne`` and ``arrTwo`` at each index
 - The ``int[] result`` array, which will be the value we will be returning, is then initialized to a length that is a combination of the length of the two arrays we will be merging
-- We know the amount of times we will need to iterate since we just initialzied what we know the length of ``result`` therefore we can use a for loop
+- We know the amount of times we will need to iterate since we just initialzied what we know the length of ``result`` to be therefore we can use a for loop
 ## The first two conditions
 ```csharp
 if (pointerOne >= arrOne.Length)
