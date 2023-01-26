@@ -45,12 +45,12 @@ public bool Send(Email email)
 - Created a field ``List<string> Disciplines`` in the ``Student`` class. This is used in children classes to validate inputs given in case that a discipline is input that is were not valid due to a spelling error, a course that was not given a the institution, and to limit what can be input to the method. Shown below:
 ```csharp
 // field in parent class Student
-protected List<string> Disciplines = new List<string>() {"computer science", "math", "biology", "chemistry", "history", "physics", "english"};
+protected List<string> DisciplinesOptions = new List<string>() {"computer science", "math", "biology", "chemistry", "history", "physics", "english"};
 
 // Example of Discplines being used in child class method 
 public override void EmailExamResult(string discipline, int mark)
 {
-    if (!Disciplines.Contains(discipline.ToLower()))
+    if (!DisciplinesOptions.Contains(discipline.ToLower()))
     {
         throw new Exception("Discipline is not available.");
     }
